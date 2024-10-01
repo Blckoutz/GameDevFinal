@@ -4,13 +4,18 @@
 * [Proposal](paperproto/Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
+### 2024/10/1 ~ hours: Darkness Mask and Player Light Source
+* Item 1 - Temporary Player Model/Animations
+* Item 2 - Figuring Out How To Use PointLight2D With The Darkness Mask
+* Item 3 - Creating The Darkness Mask That Will Obscure Vision At Distances  
+
 ### 2024/08/27 - 2024/09/23 ~6 hours: Backlog of work done before devlog creation
 * Item 1 - Looked for assets for the game
 * Item 2 - Created proposal and paper prototype
 * Item 3 - Created enemy type 1
 * Item 4 - Created Main Menu
 * Item 5 - TODO: Options Menu and sliders properly working (later)
-* Item 6 - 
+
 
 
 

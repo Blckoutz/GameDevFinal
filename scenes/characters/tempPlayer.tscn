@@ -1,11 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://db0nwednou21h"]
+[gd_scene load_steps=56 format=3 uid="uid://db0nwednou21h"]
 
 [ext_resource type="Script" path="res://scripts/temp_player.gd" id="1_r5snk"]
 [ext_resource type="Texture2D" uid="uid://breg8ayaut87g" path="res://assets/Base Character - Free/idle.png" id="1_ykd7o"]
 [ext_resource type="Texture2D" uid="uid://75vdyqnyinai" path="res://assets/Base Character - Free/walk.png" id="2_5dlqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knyev"]
-radius = 7.07107
+radius = 12.0332
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7wxw"]
 atlas = ExtResource("1_ykd7o")
@@ -386,6 +386,16 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_idjj5"]
+offsets = PackedFloat32Array(0, 0.627404, 0.944712)
+colors = PackedColorArray(1, 1, 1, 1, 0.12, 0.12, 0.12, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ghibi"]
+gradient = SubResource("Gradient_idjj5")
+fill = 1
+fill_from = Vector2(0.517094, 0.5)
+fill_to = Vector2(0.940171, 0.042735)
+
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
 collision_mask = 2
@@ -395,9 +405,14 @@ script = ExtResource("1_r5snk")
 shape = SubResource("CircleShape2D_knyev")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(-0.27879, 0.173733)
 sprite_frames = SubResource("SpriteFrames_xs3qu")
-animation = &"idleFaceRight"
-frame_progress = 0.932339
+animation = &"walkR"
+frame = 6
+frame_progress = 0.160816
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.49012e-08, -0.173733)
+scale = Vector2(38.7692, 46.1479)
+texture = SubResource("GradientTexture2D_ghibi")
+texture_scale = 0.01
