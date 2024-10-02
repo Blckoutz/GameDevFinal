@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq6ywcgnevrps"]
+[gd_scene load_steps=16 format=3 uid="uid://cq6ywcgnevrps"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_lt41m"]
+[ext_resource type="Texture2D" uid="uid://dxlpx4uplhkje" path="res://assets/MainMenuBG.png" id="2_f7mk3"]
+[ext_resource type="FontFile" uid="uid://dosltwrrg63k1" path="res://fonts/GelatinMonoTTF.ttf" id="3_yhokp"]
+[ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="4_tqffu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx2pl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hjve"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbljo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn6gq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bpaf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n1nu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by7mq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piuso"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km4ao"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5uni"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcyhc"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +48,11 @@ grow_vertical = 2
 scale = Vector2(0.99848, 0.996255)
 script = ExtResource("1_lt41m")
 
+[node name="MainMenuBg" type="Sprite2D" parent="."]
+position = Vector2(576.797, 326.964)
+scale = Vector2(0.641689, 0.633741)
+texture = ExtResource("2_f7mk3")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -19,27 +60,98 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -132.326
-offset_top = -177.237
-offset_right = 75.6744
-offset_bottom = 39.7631
+offset_left = -117.303
+offset_top = -201.327
+offset_right = 90.6976
+offset_bottom = 15.6729
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1.08, 1)
+scale = Vector2(1.44055, 1)
 mouse_default_cursor_shape = 2
 alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yhokp")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxFlat_cx2pl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4hjve")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xbljo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rn6gq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1bpaf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_1n1nu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_by7mq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_piuso")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km4ao")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_v5uni")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcyhc")
 text = "Start Game"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yhokp")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxFlat_cx2pl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4hjve")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xbljo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rn6gq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1bpaf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_1n1nu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_by7mq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_piuso")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km4ao")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_v5uni")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcyhc")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yhokp")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxFlat_cx2pl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4hjve")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xbljo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rn6gq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1bpaf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_1n1nu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_by7mq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_piuso")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km4ao")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_v5uni")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcyhc")
 text = "Leave Game"
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Title" type="Label" parent="Labels"]
+offset_left = 407.0
+offset_top = 114.0
+offset_right = 573.0
+offset_bottom = 203.0
+scale = Vector2(2.18849, 2.34354)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.664063, 0.664063, 0.664063, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_tqffu")
+theme_override_font_sizes/font_size = 51
+text = "Feel Fear"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title2" type="Label" parent="Labels"]
+offset_left = 403.0
+offset_top = 114.0
+offset_right = 569.0
+offset_bottom = 203.0
+scale = Vector2(2.18849, 2.34354)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_tqffu")
+theme_override_font_sizes/font_size = 51
+text = "Feel Fear"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
