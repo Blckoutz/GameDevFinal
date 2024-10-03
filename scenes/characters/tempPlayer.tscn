@@ -398,7 +398,7 @@ fill_to = Vector2(0.940171, 0.042735)
 
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_r5snk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
