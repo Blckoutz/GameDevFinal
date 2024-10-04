@@ -142,7 +142,7 @@ autowrap_mode = 3
 [node name="Title2" type="Label" parent="Labels"]
 offset_left = 403.0
 offset_top = 114.0
-offset_right = 569.0
+offset_right = 573.0
 offset_bottom = 203.0
 scale = Vector2(2.18849, 2.34354)
 theme_override_colors/font_color = Color(0, 0, 0, 1)

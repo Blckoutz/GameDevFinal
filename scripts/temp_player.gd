@@ -1,25 +1,89 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-#const JUMP_VELOCITY = -400.0
+const speed=200
 
+var direction="none"
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("idleFaceFront")
+	
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	player_movement(delta)
+	
+func player_movement(delta):
+	
+	if Input.is_action_pressed("moveRight"):
+		direction="right"
+		play_anim(1)
+		velocity.x=speed
+		velocity.y=0
+	elif Input.is_action_pressed("moveLeft"):
+		play_anim(1)
+		direction="left"
+		velocity.x=-speed
+		velocity.y=0 
+	elif Input.is_action_pressed("moveDown"):
+		play_anim(1)
+		direction="down"
+		velocity.x=0
+		velocity.y=speed 
+	elif Input.is_action_pressed("moveUp"):
+		play_anim(1)
+		direction="up"
+		velocity.x=0
+		velocity.y=-speed
+	elif Input.is_action_pressed("moveLeft") && Input.is_action_pressed("moveDown"):
+		play_anim(1)
+		direction="left"
+		velocity.x=-speed
+		velocity.y=speed
+	#elif Input.is_action_pressed("moveLeft") && Input.is_action_pressed("moveDown") || Input.is_action_pressed("moveUp"):
+	#	play_anim(1)
+	#	direction="left"
+	#	velocity.x=-speed
+	#	if Input.is_action_pressed("moveDown"):
+	#		velocity.y=speed
+	#	elif Input.is_action_pressed("moveUp"):
+	#		velocity.y=-speed
+	#elif Input.is_action_pressed("moveRight") && Input.is_action_pressed("moveDown") || Input.is_action_pressed("moveUp"):
+	#	play_anim(1)
+	#	direction="right"
+	#	velocity.x=speed
+	#	if Input.is_action_pressed("moveDown"):
+	#		velocity.y=speed
+	#	elif Input.is_action_pressed("moveUp"):
+	#		velocity.y=-speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		play_anim(0)
+		velocity.x=0
+		velocity.y=0
 	move_and_slide()
+	
+	
+func play_anim(movement):
+	var dir=direction
+	var anim =$AnimatedSprite2D
+	
+	if dir=="right":
+		anim.flip_h=false
+		if movement==1:
+			anim.play("walkSide")
+		elif movement ==0:
+			anim.play("idleFaceSide")
+	elif dir=="left":
+		anim.flip_h=true
+		if movement ==1:
+			anim.play("walkSide")
+		elif movement==0:
+			anim.play("idleFaceSide")
+	elif dir=="down":
+		if movement ==1:
+			anim.play("walkF")
+		elif movement==0:
+			anim.play("idleFaceFront")
+	elif dir=="up":
+		if movement ==1:
+			anim.play("walkB")
+		elif movement==0:
+			anim.play("idleFaceBack")
