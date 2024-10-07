@@ -5,9 +5,14 @@ const speed=200
 
 var direction="none"
 
+
+
+
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idleFaceFront")
 	
+
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	

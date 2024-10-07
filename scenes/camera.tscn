@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://dnhu0g2k7746y"]
+
+[ext_resource type="Texture2D" uid="uid://c4rm4rkv7i34m" path="res://assets/camera.png" id="1_khoxx"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_jwtiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8evu"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3pe4"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3kfv"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3wah"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ira0"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00vxg"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8ybr"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu8mg"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqvyg"]
+atlas = ExtResource("1_khoxx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhfpp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8evu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3pe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3kfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3wah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ira0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00vxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8ybr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu8mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqvyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Camera" type="CharacterBody2D"]
+position = Vector2(3, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(478, 364)
+scale = Vector2(6, 5.37499)
+sprite_frames = SubResource("SpriteFrames_rhfpp")
+frame_progress = 0.162105
+script = ExtResource("2_jwtiu")
