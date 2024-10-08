@@ -5,14 +5,15 @@
 * [Proposal](paperproto/Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
-### 2024/10/7 3 hours: 
+### 2024/10/7 3 hours: Successfully got some stuff working
 * Item 1 - Darkness Mask now globally works
 * Item 2 - Darkness Shader created and coded in gdshader
 * Item 3 - Figured out how to use lighting in the darkness map to allow the start of flashlight mechanic functionality
 * Item 4 - Point light on player now works perfectly
 * Item 5 - Drew Camera sprite frames on Aseprite and imported to Godot to begin foundation for creation of camera mechanic
 * Item 6 - Updating Trello Board
-* Item 7 - (not really worth mentioning but I will anyways) Attached a script to Options Menu (lacks functionality still) 
+* Item 7 - Added audio to main menu and level 1
+* Item 8 - (not really worth mentioning but I will anyways) Attached a script to Options Menu (lacks functionality still) 
 
 ### 2024/10/4 3 hours: Player code, tilemap/sheet update
 * Item 1 - Added code to player script that allows movement with set movement keys
