@@ -306,7 +306,7 @@ fill_from = Vector2(0.517094, 0.5)
 fill_to = Vector2(0.940171, 0.042735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ls68"]
-size = Vector2(63.8065, 20)
+size = Vector2(65.9338, 25.8863)
 
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
@@ -328,12 +328,11 @@ texture = SubResource("GradientTexture2D_ghibi")
 texture_scale = 0.01
 
 [node name="FLightBox" type="CollisionShape2D" parent="."]
-position = Vector2(37.2185, 3.6484)
+position = Vector2(38.2639, 1.99793)
 shape = SubResource("RectangleShape2D_7ls68")
 disabled = true
 
 [node name="flashlight" type="PointLight2D" parent="FLightBox"]
-position = Vector2(-3.5031, 14.4199)
-enabled = false
+position = Vector2(0.0696983, 0.781799)
+scale = Vector2(0.376082, 0.406879)
 texture = ExtResource("4_64n0n")
-texture_scale = 0.35

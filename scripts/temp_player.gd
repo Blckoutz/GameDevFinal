@@ -6,14 +6,13 @@ const speed=200
 var direction="none"
 
 
-func flashlight_on(delta):
-	if Input.is_action_pressed("Flashlight"):
-		$FLightBox.disbaled=false
-		$flashlight.enabled=true
+
+
 
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idleFaceFront")
+	$FLightBox.disabled=true
 	
 
 func _physics_process(delta: float) -> void:
@@ -95,3 +94,9 @@ func play_anim(movement):
 			anim.play("walkB")
 		elif movement==0:
 			anim.play("idleFaceBack")
+			
+func flashlight_on(delta):
+	if Input.is_action_pressed("flashlight") && $FLightBox.disabled==true:
+		$FLightBox.disbaled=false
+	elif Input.is_action_pressed("flashlight") && $FLightBox.disabled==false:
+		$FLightBox.disabled=true
