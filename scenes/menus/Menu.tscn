@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cq6ywcgnevrps"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_lt41m"]
-[ext_resource type="Texture2D" uid="uid://dxlpx4uplhkje" path="res://assets/MainMenuBG.png" id="2_f7mk3"]
+[ext_resource type="Texture2D" uid="uid://fstc3kolctyk" path="res://assets/MainMenuBG.png" id="2_f7mk3"]
 [ext_resource type="FontFile" uid="uid://dosltwrrg63k1" path="res://fonts/GelatinMonoTTF.ttf" id="3_yhokp"]
 [ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="4_tqffu"]
 [ext_resource type="AudioStream" uid="uid://br2hwfajtbjxk" path="res://music/VideoGame_Track_1.mp3" id="5_vlv25"]

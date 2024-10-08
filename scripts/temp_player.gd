@@ -6,7 +6,10 @@ const speed=200
 var direction="none"
 
 
-
+func flashlight_on(delta):
+	if Input.is_action_pressed("Flashlight"):
+		$FLightBox.disbaled=false
+		$flashlight.enabled=true
 
 
 func _ready() -> void:

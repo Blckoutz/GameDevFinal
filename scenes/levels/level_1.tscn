@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhu0g2k7746y" path="res://scenes/camera.tscn" id="3_wkh2e"]
 [ext_resource type="AudioStream" uid="uid://csvu1s0l1rc80" path="res://music/2- Mental Vortex.mp3" id="4_6tjtq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vy8w7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2r0a"]
 texture = ExtResource("1_d771e")
 0:0/0 = 0
 1:0/0 = 0
@@ -841,7 +841,7 @@ texture = ExtResource("1_d771e")
 12:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_swqlu"]
-sources/0 = SubResource("TileSetAtlasSource_vy8w7")
+sources/0 = SubResource("TileSetAtlasSource_k2r0a")
 
 [node name="Level1" type="Node"]
 

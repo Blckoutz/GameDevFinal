@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://db0nwednou21h"]
+[gd_scene load_steps=46 format=3 uid="uid://db0nwednou21h"]
 
 [ext_resource type="Script" path="res://scripts/temp_player.gd" id="1_r5snk"]
 [ext_resource type="Texture2D" uid="uid://breg8ayaut87g" path="res://assets/Base Character - Free/idle.png" id="1_ykd7o"]
 [ext_resource type="Texture2D" uid="uid://75vdyqnyinai" path="res://assets/Base Character - Free/walk.png" id="2_5dlqb"]
+[ext_resource type="Texture2D" uid="uid://3ll2xmw5hyqm" path="res://assets/flashlight.png" id="4_64n0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knyev"]
 radius = 12.0332
@@ -304,12 +305,15 @@ fill = 1
 fill_from = Vector2(0.517094, 0.5)
 fill_to = Vector2(0.940171, 0.042735)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ls68"]
+size = Vector2(63.8065, 20)
+
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
 collision_mask = 3
 script = ExtResource("1_r5snk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="DetectionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_knyev")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -317,8 +321,19 @@ position = Vector2(-0.27879, 0.173733)
 sprite_frames = SubResource("SpriteFrames_xs3qu")
 animation = &"idleFaceSide"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="auraLight" type="PointLight2D" parent="."]
 position = Vector2(-1.49012e-08, -0.173733)
 scale = Vector2(38.7692, 46.1479)
 texture = SubResource("GradientTexture2D_ghibi")
 texture_scale = 0.01
+
+[node name="FLightBox" type="CollisionShape2D" parent="."]
+position = Vector2(37.2185, 3.6484)
+shape = SubResource("RectangleShape2D_7ls68")
+disabled = true
+
+[node name="flashlight" type="PointLight2D" parent="FLightBox"]
+position = Vector2(-3.5031, 14.4199)
+enabled = false
+texture = ExtResource("4_64n0n")
+texture_scale = 0.35
