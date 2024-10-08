@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var FLon=false
 const speed=200
 
 var direction="none"
@@ -96,7 +96,13 @@ func play_anim(movement):
 			anim.play("idleFaceBack")
 			
 func flashlight_on(delta):
-	if Input.is_action_pressed("flashlight") && $FLightBox.disabled==true:
+	if (Input.is_action_pressed("flashlight")) && (FLon==false):
 		$FLightBox.disbaled=false
-	elif Input.is_action_pressed("flashlight") && $FLightBox.disabled==false:
+		FLon=true
+	elif (Input.is_action_pressed("flashlight")) && (FLon==true):
 		$FLightBox.disabled=true
+		FLon=false
+func flashlight_battery(delta):
+	$FLightBox/Timer.paused
+	while (FLon==true):
+		$FLightBox/Timer.start()

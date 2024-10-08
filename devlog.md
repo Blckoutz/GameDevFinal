@@ -2,7 +2,7 @@
 * Name: Mostafa Ibrahim
 * [Trello Board](https://trello.com/invite/b/66f336a0b6ce959f7cca8288/ATTI810d517c75c2287caf074ab0219375211459926F/game-design-fp-mi) 
 * [Trello Board Public Link](https://trello.com/b/Mm1qgpJD/game-design-fp-mi)
-* [Proposal](paperproto/Proposal.pdf)
+* [Proposal](Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
 ### 2024/10/7 3 hours: Successfully got some stuff working

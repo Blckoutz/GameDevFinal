@@ -335,4 +335,8 @@ disabled = true
 [node name="flashlight" type="PointLight2D" parent="FLightBox"]
 position = Vector2(0.0696983, 0.781799)
 scale = Vector2(0.376082, 0.406879)
+enabled = false
 texture = ExtResource("4_64n0n")
+
+[node name="Timer" type="Timer" parent="FLightBox"]
+wait_time = 180.0
