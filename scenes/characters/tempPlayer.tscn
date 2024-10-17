@@ -338,5 +338,6 @@ scale = Vector2(0.376082, 0.406879)
 enabled = false
 texture = ExtResource("4_64n0n")
 
-[node name="Timer" type="Timer" parent="FLightBox"]
+[node name="Timer" type="Timer" parent="FLightBox/flashlight"]
+process_callback = 0
 wait_time = 180.0

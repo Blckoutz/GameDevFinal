@@ -75,11 +75,11 @@ animations = [{
 }]
 
 [node name="Camera" type="CharacterBody2D"]
-position = Vector2(3, 2)
+position = Vector2(-475, -360)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(478, 364)
 scale = Vector2(6, 5.37499)
 sprite_frames = SubResource("SpriteFrames_rhfpp")
-frame_progress = 0.162105
+frame_progress = 0.81634
 script = ExtResource("2_jwtiu")

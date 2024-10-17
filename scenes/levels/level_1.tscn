@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3jlo5d3mky87"]
+[gd_scene load_steps=8 format=3 uid="uid://d3jlo5d3mky87"]
 
 [ext_resource type="Texture2D" uid="uid://b1slamtx1g8ct" path="res://assets/Dungeon_Tileset.png" id="1_d771e"]
 [ext_resource type="PackedScene" uid="uid://db0nwednou21h" path="res://scenes/characters/tempPlayer.tscn" id="2_lgf0l"]
 [ext_resource type="PackedScene" uid="uid://dnhu0g2k7746y" path="res://scenes/camera.tscn" id="3_wkh2e"]
 [ext_resource type="AudioStream" uid="uid://csvu1s0l1rc80" path="res://music/2- Mental Vortex.mp3" id="4_6tjtq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s2rm1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2r0a"]
 texture = ExtResource("1_d771e")
@@ -820,6 +822,8 @@ texture = ExtResource("1_d771e")
 6:12/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_swqlu"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_s2rm1")
 sources/0 = SubResource("TileSetAtlasSource_k2r0a")
 
 [node name="Level1" type="Node"]
@@ -852,3 +856,4 @@ scale = Vector2(0.474276, 0.79208)
 stream = ExtResource("4_6tjtq")
 volume_db = -6.933
 autoplay = true
+parameters/looping = false

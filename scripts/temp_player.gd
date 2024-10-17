@@ -1,108 +1,86 @@
 extends CharacterBody2D
 
-var FLon=false
-const speed=200
+enum MotionMode { Motion_Mode_Floating = 1 }
 
-var direction="none"
-
-
-
-
-
+var FLon = false
+const speed = 200
+var direction = Vector2.ZERO
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idleFaceFront")
-	$FLightBox.disabled=true
-	
+	$FLightBox.disabled = true  # Ensure initial state is off
+	$FLightBox/flashlight.enabled = false  # Ensure initial state is off
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	
-func player_movement(delta):
-	
+	flashlight_on()
+	flashlight_battery(delta)
+
+func player_movement(_delta: float) -> void:
+	direction = Vector2.ZERO
+
 	if Input.is_action_pressed("moveRight"):
-		direction="right"
-		play_anim(1)
-		velocity.x=speed
-		velocity.y=0
-	elif Input.is_action_pressed("moveLeft"):
-		play_anim(1)
-		direction="left"
-		velocity.x=-speed
-		velocity.y=0 
-	elif Input.is_action_pressed("moveDown"):
-		play_anim(1)
-		direction="down"
-		velocity.x=0
-		velocity.y=speed 
-	elif Input.is_action_pressed("moveUp"):
-		play_anim(1)
-		direction="up"
-		velocity.x=0
-		velocity.y=-speed
-	elif Input.is_action_pressed("moveLeft") && Input.is_action_pressed("moveDown"):
-		play_anim(1)
-		direction="left"
-		velocity.x=-speed
-		velocity.y=speed
-	#elif Input.is_action_pressed("moveLeft") && Input.is_action_pressed("moveDown") || Input.is_action_pressed("moveUp"):
-	#	play_anim(1)
-	#	direction="left"
-	#	velocity.x=-speed
-	#	if Input.is_action_pressed("moveDown"):
-	#		velocity.y=speed
-	#	elif Input.is_action_pressed("moveUp"):
-	#		velocity.y=-speed
-	#elif Input.is_action_pressed("moveRight") && Input.is_action_pressed("moveDown") || Input.is_action_pressed("moveUp"):
-	#	play_anim(1)
-	#	direction="right"
-	#	velocity.x=speed
-	#	if Input.is_action_pressed("moveDown"):
-	#		velocity.y=speed
-	#	elif Input.is_action_pressed("moveUp"):
-	#		velocity.y=-speed
-	else:
-		play_anim(0)
-		velocity.x=0
-		velocity.y=0
+		direction.x += 1
+	if Input.is_action_pressed("moveLeft"):
+		direction.x -= 1
+	if Input.is_action_pressed("moveDown"):
+		direction.y += 1
+	if Input.is_action_pressed("moveUp"):
+		direction.y -= 1
+
+	direction = direction.normalized()
+	velocity = direction * speed
+
 	move_and_slide()
-	
-	
-func play_anim(movement):
-	var dir=direction
-	var anim =$AnimatedSprite2D
-	
-	if dir=="right":
-		anim.flip_h=false
-		if movement==1:
-			anim.play("walkSide")
-		elif movement ==0:
-			anim.play("idleFaceSide")
-	elif dir=="left":
-		anim.flip_h=true
-		if movement ==1:
-			anim.play("walkSide")
-		elif movement==0:
-			anim.play("idleFaceSide")
-	elif dir=="down":
-		if movement ==1:
-			anim.play("walkF")
-		elif movement==0:
-			anim.play("idleFaceFront")
-	elif dir=="up":
-		if movement ==1:
-			anim.play("walkB")
-		elif movement==0:
-			anim.play("idleFaceBack")
-			
-func flashlight_on(delta):
-	if (Input.is_action_pressed("flashlight")) && (FLon==false):
-		$FLightBox.disbaled=false
-		FLon=true
-	elif (Input.is_action_pressed("flashlight")) && (FLon==true):
-		$FLightBox.disabled=true
-		FLon=false
-func flashlight_battery(delta):
-	$FLightBox/Timer.paused
-	while (FLon==true):
-		$FLightBox/Timer.start()
+
+	update_flashlight()
+	play_anim(1 if direction != Vector2.ZERO else 0)
+
+func update_flashlight() -> void:
+	if direction != Vector2.ZERO:
+		$FLightBox/flashlight.rotation = direction.angle()
+		# Update position based on direction (arbitrary values)
+		if direction == Vector2.RIGHT:
+			$FLightBox/flashlight.position = Vector2(0, 1.5)
+		elif direction == Vector2.LEFT:
+			$FLightBox/flashlight.position = Vector2(-76.5, 4)
+		elif direction == Vector2.DOWN:
+			$FLightBox/flashlight.position = Vector2(-41, 36.5)
+		elif direction == Vector2.UP:
+			$FLightBox/flashlight.position = Vector2(-44, -34)
+		elif direction.x > 0 and direction.y > 0:  # Down-Right
+			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-41, 36.5), direction.y)
+		elif direction.x < 0 and direction.y > 0:  # Down-Left
+			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-41, 36.5), direction.y)
+		elif direction.x > 0 and direction.y < 0:  # Up-Right
+			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-44, -34), -direction.y)
+		elif direction.x < 0 and direction.y < 0:  # Up-Left
+			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-44, -34), -direction.y)
+
+func play_anim(movement: int) -> void:
+	var anim = $AnimatedSprite2D
+	anim.flip_h = direction.x < 0  # Simplified horizontal flip logic
+	if movement == 0:
+		anim.play("idleFaceFront")
+	else:
+		match direction:
+			Vector2.RIGHT, Vector2.LEFT:
+				anim.play("walkSide" if movement == 1 else "idleFaceSide")
+			Vector2.DOWN:
+				anim.play("walkF" if movement == 1 else "idleFaceFront")
+			Vector2.UP:
+				anim.play("walkB" if movement == 1 else "idleFaceBack")
+
+func flashlight_on() -> void:
+	if Input.is_action_just_pressed("flashlight"):
+		print("Flashlight button pressed")  # Debugging statement
+		FLon = !FLon  # Toggle the flashlight state
+		$FLightBox.disabled = not FLon  # Enable/disable based on state
+		$FLightBox/flashlight.enabled = FLon  # Enable/disable the PointLight2D
+		print("Flashlight state:", FLon)  # Debugging statement
+		print("FLightBox disabled state:", $FLightBox.disabled)  # Debugging statement
+		print("Flashlight enabled state:", $FLightBox/flashlight.enabled)  # Debugging statement
+
+func flashlight_battery(_delta: float) -> void:
+	if FLon:
+		$FLightBox/flashlight/Timer.start()
