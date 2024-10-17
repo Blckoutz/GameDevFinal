@@ -5,6 +5,11 @@
 * [Proposal](Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
+### 2024/10/17 5.5 hours: Flashlight and Diagonal Movement
+* Item 1 - Got flashlight functionality working
+* Item 2 - Reworked player movement to include diagonal smooth movement using Vector2
+* Item 3 - Made flashlight rotate to follow with player movement (needs tuning for diagonal input but its pretty much done already)
+
 ### 2024/10/7 3 hours: Successfully got some stuff working
 * Item 1 - Darkness Mask now globally works
 * Item 2 - Darkness Shader created and coded in gdshader
