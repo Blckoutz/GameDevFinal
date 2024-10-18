@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://db0nwednou21h"]
+[gd_scene load_steps=47 format=3 uid="uid://db0nwednou21h"]
 
 [ext_resource type="Script" path="res://scripts/temp_player.gd" id="1_r5snk"]
 [ext_resource type="Texture2D" uid="uid://breg8ayaut87g" path="res://assets/Base Character - Free/idle.png" id="1_ykd7o"]
@@ -308,9 +308,14 @@ fill_to = Vector2(0.940171, 0.042735)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ls68"]
 size = Vector2(65.9338, 25.8863)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4fu4"]
+radius = 4.768
+
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
+collision_priority = 2.0
 script = ExtResource("1_r5snk")
 
 [node name="DetectionBox" type="CollisionShape2D" parent="."]
@@ -341,3 +346,6 @@ texture = ExtResource("4_64n0n")
 [node name="Timer" type="Timer" parent="FLightBox/flashlight"]
 process_callback = 0
 wait_time = 180.0
+
+[node name="wallsCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c4fu4")

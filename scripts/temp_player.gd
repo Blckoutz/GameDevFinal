@@ -49,13 +49,13 @@ func update_flashlight() -> void:
 		elif direction == Vector2.UP:
 			$FLightBox/flashlight.position = Vector2(-44, -34)
 		elif direction.x > 0 and direction.y > 0:  # Down-Right
-			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-41, 36.5), direction.y)
+			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-20, 36.5), direction.y)
 		elif direction.x < 0 and direction.y > 0:  # Down-Left
-			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-41, 36.5), direction.y)
+			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-63, 36.5), direction.y)
 		elif direction.x > 0 and direction.y < 0:  # Up-Right
-			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-44, -34), -direction.y)
+			$FLightBox/flashlight.position = Vector2(0, 1.5).lerp(Vector2(-15, -34), -direction.y)
 		elif direction.x < 0 and direction.y < 0:  # Up-Left
-			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-44, -34), -direction.y)
+			$FLightBox/flashlight.position = Vector2(-76.5, 4).lerp(Vector2(-65, -34), -direction.y)
 
 func play_anim(movement: int) -> void:
 	var anim = $AnimatedSprite2D
