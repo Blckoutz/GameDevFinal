@@ -5,6 +5,18 @@
 * [Proposal](Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
+### 2024/10/18 7 hours: Many New Updates to Work
+* Item 1 - Creation of enemy
+* Item 2 - creation of globals
+* Item 3 - creation + finish of adding light occlusion on tilemap
+* Item 4 - finalized flashlight except for death screen on battery death
+* Item 5 - begun writing basic enemy ai for pathfinding and wandering taking account for walls+collision+player detection
+* Item 6 - added movement frames to downloaded enemy (will set animations to movement when polishing)
+* Item 7 - added comments citing some work
+* Item 8 - Updated Trello Board
+* Item 9 - Creating parameters for area entry surrounding player that will enable pathfinding to track instead of wander being active for enemy AI
+* Item 10 - Fixed diagonal movement being wonky with flashlight on
+
 ### 2024/10/17 5.5 hours: Flashlight and Diagonal Movement
 * Item 1 - Got flashlight functionality working
 * Item 2 - Reworked player movement to include diagonal smooth movement using Vector2
