@@ -14,6 +14,10 @@ config/name="2D Horror"
 run/main_scene="res://scenes/menus/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[autoload]
+
+GameGlobals="*res://scripts/game.gd"
+
 [display]
 
 window/stretch/mode="viewport"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dnhu0g2k7746y"]
 
-[ext_resource type="Texture2D" uid="uid://ie2lm2a8s0gl" path="res://assets/camera.png" id="1_khoxx"]
+[ext_resource type="Texture2D" uid="uid://c4rm4rkv7i34m" path="res://assets/camera.png" id="1_khoxx"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_jwtiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8evu"]
@@ -75,10 +75,8 @@ animations = [{
 }]
 
 [node name="Camera" type="CharacterBody2D"]
-position = Vector2(-475, -360)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(478, 364)
 scale = Vector2(6, 5.37499)
 sprite_frames = SubResource("SpriteFrames_rhfpp")
 frame_progress = 0.81634

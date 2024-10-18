@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1slamtx1g8ct" path="res://assets/Dungeon_Tileset.png" id="1_8yp5v"]
 [ext_resource type="PackedScene" uid="uid://db0nwednou21h" path="res://scenes/characters/tempPlayer.tscn" id="2_8xig4"]
-[ext_resource type="PackedScene" uid="uid://dnhu0g2k7746y" path="res://scenes/camera.tscn" id="3_mx6n0"]
+[ext_resource type="PackedScene" uid="uid://dnhu0g2k7746y" path="res://scenes/misc/camera.tscn" id="3_mx6n0"]
 [ext_resource type="AudioStream" uid="uid://csvu1s0l1rc80" path="res://music/2- Mental Vortex.mp3" id="4_6ysqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4uoi"]

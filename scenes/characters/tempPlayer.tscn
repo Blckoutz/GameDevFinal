@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/temp_player.gd" id="1_r5snk"]
 [ext_resource type="Texture2D" uid="uid://breg8ayaut87g" path="res://assets/Base Character - Free/idle.png" id="1_ykd7o"]
 [ext_resource type="Texture2D" uid="uid://75vdyqnyinai" path="res://assets/Base Character - Free/walk.png" id="2_5dlqb"]
-[ext_resource type="Texture2D" uid="uid://3ll2xmw5hyqm" path="res://assets/flashlight.png" id="4_64n0n"]
+[ext_resource type="Texture2D" uid="uid://d0d8nln12xgl4" path="res://assets/flashlight.png" id="4_64n0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knyev"]
 radius = 12.0332
@@ -309,17 +309,20 @@ fill_to = Vector2(0.940171, 0.042735)
 size = Vector2(65.9338, 25.8863)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4fu4"]
-radius = 4.768
+radius = 3.69029
 
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 2
+collision_mask = 2
 collision_priority = 2.0
 script = ExtResource("1_r5snk")
 
-[node name="DetectionBox" type="CollisionShape2D" parent="."]
+[node name="DetectionBox" type="Area2D" parent="."]
+
+[node name="DetectionBox" type="CollisionShape2D" parent="DetectionBox"]
 shape = SubResource("CircleShape2D_knyev")
+debug_color = Color(0.7, 0.164063, 0, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.27879, 0.173733)
@@ -332,20 +335,23 @@ scale = Vector2(38.7692, 46.1479)
 texture = SubResource("GradientTexture2D_ghibi")
 texture_scale = 0.01
 
-[node name="FLightBox" type="CollisionShape2D" parent="."]
-position = Vector2(38.2639, 1.99793)
+[node name="FLightBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 7
+
+[node name="FLightBox" type="CollisionShape2D" parent="FLightBox"]
+position = Vector2(36.8003, 2.25853)
 shape = SubResource("RectangleShape2D_7ls68")
 disabled = true
 
-[node name="flashlight" type="PointLight2D" parent="FLightBox"]
+[node name="flashlight" type="PointLight2D" parent="FLightBox/FLightBox"]
 position = Vector2(0.0696983, 0.781799)
 scale = Vector2(0.376082, 0.406879)
 enabled = false
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.898039)
 texture = ExtResource("4_64n0n")
 
-[node name="Timer" type="Timer" parent="FLightBox/flashlight"]
-process_callback = 0
-wait_time = 180.0
-
 [node name="wallsCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.91107)
 shape = SubResource("CircleShape2D_c4fu4")
