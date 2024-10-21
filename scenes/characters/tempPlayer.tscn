@@ -355,3 +355,11 @@ texture = ExtResource("4_64n0n")
 [node name="wallsCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.91107)
 shape = SubResource("CircleShape2D_c4fu4")
+
+[node name="EnemyLargeZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="EnemyLargeZone" type="CollisionShape2D" parent="EnemyLargeZone"]
+position = Vector2(0, 1.91107)
+shape = SubResource("CircleShape2D_c4fu4")

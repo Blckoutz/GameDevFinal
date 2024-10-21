@@ -1480,10 +1480,10 @@ parameters/looping = true
 position = Vector2(-533, 981)
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(-533, 981)
+position = Vector2(-537, 1251)
 
 [node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(-533, 981)
+position = Vector2(423, 1221)
 
 [node name="Marker2D3" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(-533, 981)
+position = Vector2(167, 989)
