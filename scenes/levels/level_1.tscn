@@ -1,10 +1,11 @@
-[gd_scene load_steps=62 format=3 uid="uid://d3jlo5d3mky87"]
+[gd_scene load_steps=65 format=3 uid="uid://d3jlo5d3mky87"]
 
 [ext_resource type="Texture2D" uid="uid://b1slamtx1g8ct" path="res://assets/Dungeon_Tileset.png" id="1_d771e"]
 [ext_resource type="PackedScene" uid="uid://db0nwednou21h" path="res://scenes/characters/tempPlayer.tscn" id="2_lgf0l"]
 [ext_resource type="PackedScene" uid="uid://dnhu0g2k7746y" path="res://scenes/misc/camera.tscn" id="3_wkh2e"]
 [ext_resource type="AudioStream" uid="uid://csvu1s0l1rc80" path="res://music/2- Mental Vortex.mp3" id="4_6tjtq"]
 [ext_resource type="PackedScene" uid="uid://cs2m683ck8u1d" path="res://scenes/characters/enemy.tscn" id="5_3uanm"]
+[ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="6_6kiu5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s2rm1"]
 
@@ -1441,6 +1442,13 @@ physics_layer_0/collision_mask = 2
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_s2rm1")
 sources/0 = SubResource("TileSetAtlasSource_k2r0a")
 
+[sub_resource type="Gradient" id="Gradient_ywdl5"]
+offsets = PackedFloat32Array(0, 0.495726, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xg21f"]
+gradient = SubResource("Gradient_ywdl5")
+
 [node name="Level1" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1455,7 +1463,7 @@ layer_2/name = "WallCorners"
 layer_2/tile_data = PackedInt32Array(5177358, 1179648, 5, 5242893, 327680, 11, 5177357, 327680, 10, 5111821, 327680, 10, 5242892, 262144, 11, 5177356, 262144, 10, 5111820, 262144, 10)
 
 [node name="tempPlayer" parent="." instance=ExtResource("2_lgf0l")]
-position = Vector2(-294, 1382)
+position = Vector2(-474, 1429)
 scale = Vector2(4.14631, 3.54141)
 
 [node name="Camera2D" type="Camera2D" parent="tempPlayer"]
@@ -1463,8 +1471,7 @@ scale = Vector2(0.790967, 0.625782)
 zoom = Vector2(2, 2)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.00268555, 0, 0.0859375, 1)
+color = Color(0.00373611, 1.8049e-08, 0.106723, 1)
 
 [node name="Camera" parent="." instance=ExtResource("3_wkh2e")]
 position = Vector2(404, 933)
@@ -1482,8 +1489,29 @@ position = Vector2(-533, 981)
 [node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
 position = Vector2(-537, 1251)
 
+[node name="Marker2D4" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(-537, 982)
+
 [node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
 position = Vector2(423, 1221)
 
 [node name="Marker2D3" type="Marker2D" parent="." groups=["FirstEnemy"]]
 position = Vector2(167, 989)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Controls" type="Label" parent="Labels"]
+offset_left = -256.0
+offset_top = 1322.0
+offset_right = -3.0
+offset_bottom = 1397.0
+theme_override_fonts/font = ExtResource("6_6kiu5")
+text = "W,A,S,D to move/ arrow keys
+F for Flashlight
+Space for camera (not active yet)"
+
+[node name="PointLight2D" type="PointLight2D" parent="Labels"]
+position = Vector2(-185, 1346)
+scale = Vector2(4.30124, 1)
+energy = 0.67
+texture = SubResource("GradientTexture2D_xg21f")

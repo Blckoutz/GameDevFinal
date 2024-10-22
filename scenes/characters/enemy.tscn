@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cs2m683ck8u1d"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qkiyk"]
-[ext_resource type="Texture2D" uid="uid://dt7unpye4cv14" path="res://assets/Skeleton.png" id="1_xei72"]
+[ext_resource type="Texture2D" uid="uid://lnxqcoe28fpc" path="res://assets/Skeleton.png" id="1_xei72"]
 [ext_resource type="PackedScene" uid="uid://crnsmkktypfow" path="res://scenes/misc/wander.tscn" id="2_88vin"]
 [ext_resource type="PackedScene" uid="uid://djd7qkksl6l8k" path="res://scenes/misc/pathfinding.tscn" id="4_a0tj8"]
 
