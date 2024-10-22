@@ -348,6 +348,7 @@ disabled = true
 position = Vector2(0.0696983, 0.781799)
 scale = Vector2(0.376082, 0.406879)
 enabled = false
+energy = 0.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.898039)
 texture = ExtResource("4_64n0n")
