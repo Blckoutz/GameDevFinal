@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://d3jlo5d3mky87"]
+[gd_scene load_steps=66 format=3 uid="uid://d3jlo5d3mky87"]
 
 [ext_resource type="Texture2D" uid="uid://b1slamtx1g8ct" path="res://assets/Dungeon_Tileset.png" id="1_d771e"]
 [ext_resource type="PackedScene" uid="uid://db0nwednou21h" path="res://scenes/characters/tempPlayer.tscn" id="2_lgf0l"]
@@ -1449,6 +1449,11 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xg21f"]
 gradient = SubResource("Gradient_ywdl5")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rx8ps"]
+vertices = PackedVector2Array(2158.96, 1514.01, -567.922, 1517.98, -554.07, -237.023, 2152.03, -243.969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2162, -254, -564, -247, -578, 1528, 2169, 1524)])
+
 [node name="Level1" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1486,18 +1491,6 @@ parameters/looping = true
 [node name="Enemy" parent="." instance=ExtResource("5_3uanm")]
 position = Vector2(-533, 981)
 
-[node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(-537, 1251)
-
-[node name="Marker2D4" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(-537, 982)
-
-[node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(423, 1221)
-
-[node name="Marker2D3" type="Marker2D" parent="." groups=["FirstEnemy"]]
-position = Vector2(167, 989)
-
 [node name="Labels" type="Node" parent="."]
 
 [node name="Controls" type="Label" parent="Labels"]
@@ -1515,3 +1508,6 @@ position = Vector2(-185, 1346)
 scale = Vector2(4.30124, 1)
 energy = 0.67
 texture = SubResource("GradientTexture2D_xg21f")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_rx8ps")
