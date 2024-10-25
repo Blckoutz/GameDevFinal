@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 enum MotionMode { Motion_Mode_Floating = 1 }
-var FLon = false
-const speed = 200
-var direction = Vector2.ZERO
-var battery_life = 180  # Battery life in seconds
+var FLon = false  # Flashlight state
+const speed = 250  # Movement speed
+var direction = Vector2.ZERO  # Player movement direction
+var battery_life = 180.0  # Battery life in seconds
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idleFaceFront")
-	$FLightBox/FLightBox.disabled = true  # Ensure flashlight starts off
+	$FLightBox/FLightBox.disabled = true  # Flashlight starts off
 	$FLightBox/FLightBox/flashlight.enabled = false
 
 func _physics_process(delta: float) -> void:
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	flashlight_on()
 	flashlight_battery(delta)
 
-	# Update the player's global position for pathfinding scripts
+	# Update the player's global position every frame
 	GameGlobals.player_position = global_position
 
 func player_movement(_delta: float) -> void:
@@ -33,7 +33,7 @@ func player_movement(_delta: float) -> void:
 
 	direction = direction.normalized()
 	velocity = direction * speed
-	move_and_slide()
+	move_and_slide()  # Use the CharacterBody2D’s native velocity
 
 	update_flashlight()
 	play_anim(1 if direction != Vector2.ZERO else 0)
@@ -42,7 +42,7 @@ func update_flashlight() -> void:
 	if direction != Vector2.ZERO:
 		$FLightBox/FLightBox/flashlight.rotation = direction.angle()
 
-	# Adjust the flashlight's position based on direction
+	# Adjust flashlight position based on movement direction
 	match direction:
 		Vector2.RIGHT:
 			$FLightBox/FLightBox/flashlight.position = Vector2(0, 1.5)
@@ -79,13 +79,13 @@ func play_anim(movement: int) -> void:
 
 func flashlight_on() -> void:
 	if Input.is_action_just_pressed("flashlight"):
-		FLon = !FLon  # Toggle the flashlight state
+		FLon = !FLon  # Toggle flashlight state
 		$FLightBox/FLightBox.disabled = not FLon
 		$FLightBox/FLightBox/flashlight.enabled = FLon
 
 func flashlight_battery(delta: float) -> void:
 	if FLon:
-		battery_life -= delta  # Decrease battery life over time
+		battery_life -= delta  # Drain battery over time
 		if battery_life <= 0:
 			FLon = false
 			$FLightBox/FLightBox.disabled = true
