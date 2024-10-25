@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cs2m683ck8u1d"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qkiyk"]
-[ext_resource type="Texture2D" uid="uid://lnxqcoe28fpc" path="res://assets/Skeleton.png" id="1_xei72"]
+[ext_resource type="Texture2D" uid="uid://dt7unpye4cv14" path="res://assets/Skeleton.png" id="1_xei72"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm1k4"]
 atlas = ExtResource("1_xei72")
@@ -173,7 +173,6 @@ scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_toey0")
 
 [node name="AIdetection" type="Area2D" parent="."]
-visible = false
 collision_layer = 8
 collision_mask = 8
 
@@ -186,5 +185,7 @@ navigation_polygon = SubResource("NavigationPolygon_we4st")
 navigation_layers = 8
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavigationReadyTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="AIdetection" to="." method="_on_a_idetection_area_entered"]
