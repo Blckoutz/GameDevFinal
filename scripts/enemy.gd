@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var navigation_region: NavigationRegion2D = $NavigationRegion2D  # Reference to the navigation region
 @onready var wall_check_timer: Timer = $wallCheck  # Timer to detect if stuck on a wall
 
+
+var scriptPick=0
 var is_tracking: bool = false  # Tracks whether the enemy is following the player
 var is_navigation_ready: bool = false  # Tracks whether the navigation map is ready
 var stuck_on_wall: bool = false  # Tracks if the enemy is stuck on a wall
