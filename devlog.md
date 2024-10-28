@@ -5,6 +5,18 @@
 * [Proposal](Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
+### 2024/10/25 7 Hours: Working on AI
+* Item 1 - Refactoring code to try to get enemy AI to work properly
+* Item 2 - Researching simple machine learning principles to understand how to properly do the AI
+* Item 3 - Made sure that the player locations globally can be accessed so enemy can pathfind properly
+
+### 2024/10/24 5.5 Hours: Fixing wander mechanic for the enemy
+* Item 1 - Enemy now is able to freely wander anywhere on the map
+* Item 2 - Since enemy shouldn't go through walls made a way for it to pick a new place to go to when stuck
+* Item 3 - side note adjusted player flashlight brightness to not be complete white light to keep canvas dark
+
+
+
 ### 2024/10/18 7 hours: Many New Updates to Work
 * Item 1 - Creation of enemy
 * Item 2 - creation of globals
