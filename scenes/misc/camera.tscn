@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dnhu0g2k7746y"]
 
-[ext_resource type="Texture2D" uid="uid://ie2lm2a8s0gl" path="res://assets/camera.png" id="1_khoxx"]
+[ext_resource type="Texture2D" uid="uid://c4rm4rkv7i34m" path="res://assets/camera.png" id="1_khoxx"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_jwtiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8evu"]
@@ -86,5 +86,3 @@ script = ExtResource("2_jwtiu")
 scale = Vector2(6, 5.37499)
 sprite_frames = SubResource("SpriteFrames_rhfpp")
 animation = &"openNclose"
-
-[node name="Camera2D" type="Camera2D" parent="."]
