@@ -5,6 +5,11 @@ var FLon = false  # Flashlight state
 const speed = 250  # Movement speed
 var direction = Vector2.ZERO  # Player movement direction
 var battery_life = 180.0  # Battery life in seconds
+var is_camera_mode = false
+var current_camera_index = 0
+#from level
+var player_camera: Camera2D  
+var room_cameras: Array[Camera2D]
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idleFaceFront")
@@ -90,3 +95,30 @@ func flashlight_battery(delta: float) -> void:
 			FLon = false
 			$FLightBox/FLightBox.disabled = true
 			$FLightBox/FLightBox/flashlight.enabled = false
+
+
+func toggle_camera_mode():
+	is_camera_mode = !is_camera_mode
+	if is_camera_mode:
+		set_process(false)  # Locks player movement
+		current_camera_index = 0
+		switch_to_camera(room_cameras[current_camera_index])
+		$"../../CanvasModulate".color=Color(1,0,27,0)
+	else:
+		set_process(true)
+		switch_to_camera(player_camera)
+		$"../../CanvasModulate".color=Color(1,0,27,255)
+		
+func switch_to_next_camera():
+	current_camera_index = (current_camera_index + 1) % room_cameras.size()
+	switch_to_camera(room_cameras[current_camera_index])
+
+func switch_to_previous_camera():
+	current_camera_index = (current_camera_index - 1 + room_cameras.size()) % room_cameras.size()
+	switch_to_camera(room_cameras[current_camera_index])
+
+func switch_to_camera(camera: Camera2D):
+	if camera:
+		camera.make_current()  # Activate the selected camera
+	else:
+		push_error("Attempted to switch to a camera that is not assigned!")

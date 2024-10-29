@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var player_camera: Camera2D  # Player's main camera in this scene
 @export var room_cameras: Array[Camera2D] # Array of additional Camera2D nodes in rooms
