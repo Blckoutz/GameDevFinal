@@ -5,6 +5,19 @@
 * [Proposal](Proposal.pdf)
 * [Itch.io](https://blckoutz.itch.io/feel-fear)
 
+### 2024/11/5 7 Hours: Updates to enemy logic and making jump scare animation + camera working fully and map layout set
+* Item 1 - Enemy pathfinding somewhat works but not always (will be patched)
+* Item 2 - Updated globals
+* Item 3 - Began making jump scare +death logic & animation
+* Item 4 - Camera switch logic and darkness mask removal (nvg) works completely 
+* Item 5 - Camera mode pauses player movement 
+
+### 2024/10/28- 2024/11/1 7 Hours: Pause from AI to do camera
+* Item 1 - Create camera script
+* Item 2 - Edit map layout to incorporate camera and test it
+* Item 3 - Patching bugged features of camera
+* Item 4 - Camera nearly finished in time frame
+
 ### 2024/10/25 7 Hours: Working on AI
 * Item 1 - Refactoring code to try to get enemy AI to work properly
 * Item 2 - Researching simple machine learning principles to understand how to properly do the AI
@@ -14,8 +27,6 @@
 * Item 1 - Enemy now is able to freely wander anywhere on the map
 * Item 2 - Since enemy shouldn't go through walls made a way for it to pick a new place to go to when stuck
 * Item 3 - side note adjusted player flashlight brightness to not be complete white light to keep canvas dark
-
-
 
 ### 2024/10/18 7 hours: Many New Updates to Work
 * Item 1 - Creation of enemy
