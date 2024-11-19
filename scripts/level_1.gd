@@ -11,3 +11,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func levelSwitch ():
+	if($Timer.is_stopped()):
+		get_tree().change_scene_to_file("res://scenes/levels/level_2.tscn")
+	pass

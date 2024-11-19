@@ -1569,3 +1569,8 @@ position = Vector2(-181.5, 1350.5)
 scale = Vector2(3.17188, 1.14063)
 energy = 0.67
 texture = SubResource("GradientTexture2D_xg21f")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+autostart = true

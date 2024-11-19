@@ -154,11 +154,6 @@ region = Rect2(560, 0, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xs3qu"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"JumpScare",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o7wxw")
@@ -174,7 +169,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleFaceBack",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -191,7 +186,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleFaceFront",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -208,7 +203,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleFaceSide",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -332,7 +327,7 @@ debug_color = Color(0.7, 0.164063, 0, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.27879, 0.173733)
 sprite_frames = SubResource("SpriteFrames_xs3qu")
-animation = &"JumpScare"
+animation = &"idleFaceFront"
 
 [node name="auraLight" type="PointLight2D" parent="."]
 position = Vector2(-1.49012e-08, -0.173733)

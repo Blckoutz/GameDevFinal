@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ykhmxs3u74e1"]
+
+[ext_resource type="Texture2D" uid="uid://d3v1dtrojxtw2" path="res://assets/jumpscare2.png" id="1_511nu"]
+
+[node name="Jumpscare2" type="Node2D"]
+
+[node name="Jumpscare2" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(0.641741, 0.632813)
+texture = ExtResource("1_511nu")
