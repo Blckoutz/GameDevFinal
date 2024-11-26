@@ -43,7 +43,7 @@ func trigger_jumpscare() -> void:
 		play_jumpscare_audio(random_audio)
 
 	# Start the timer for the jumpscare
-	jumpscare_timer.start(12.0)  # Set for 12 seconds
+	jumpscare_timer.start(3)  # Set for 12 seconds
 
 func show_jumpscare_image(image: Texture2D) -> void:
 	var jumpscare_ui = $TextureRect  # This is the node showing the image
@@ -61,3 +61,4 @@ func _on_jumpscare_timeout() -> void:
 	if player_camera != null:
 		player_camera.enabled = true  # Enable the player camera
 	$TextureRect.visible = false  # Hide the jumpscare image if it's still visible
+	get_tree().reload_current_scene()
