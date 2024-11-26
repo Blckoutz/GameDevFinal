@@ -3,10 +3,7 @@
 [ext_resource type="Script" path="res://scripts/temp_player.gd" id="1_r5snk"]
 [ext_resource type="Texture2D" uid="uid://breg8ayaut87g" path="res://assets/Base Character - Free/idle.png" id="1_ykd7o"]
 [ext_resource type="Texture2D" uid="uid://75vdyqnyinai" path="res://assets/Base Character - Free/walk.png" id="2_5dlqb"]
-[ext_resource type="Texture2D" uid="uid://3ll2xmw5hyqm" path="res://assets/flashlight.png" id="4_64n0n"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_knyev"]
-radius = 12.0332
+[ext_resource type="Texture2D" uid="uid://d0d8nln12xgl4" path="res://assets/flashlight.png" id="4_64n0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7wxw"]
 atlas = ExtResource("1_ykd7o")
@@ -311,18 +308,14 @@ size = Vector2(65.9338, 25.8863)
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4fu4"]
 radius = 3.69029
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k653d"]
+
 [node name="tempPlayer" type="CharacterBody2D"]
 scale = Vector2(7.17386, 5.75595)
 collision_layer = 2
 collision_mask = 2
 collision_priority = 2.0
 script = ExtResource("1_r5snk")
-
-[node name="DetectionBox" type="Area2D" parent="."]
-
-[node name="DetectionBox" type="CollisionShape2D" parent="DetectionBox"]
-shape = SubResource("CircleShape2D_knyev")
-debug_color = Color(0.7, 0.164063, 0, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.27879, 0.173733)
@@ -362,9 +355,5 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="EnemyLargeZone" type="CollisionShape2D" parent="EnemyLargeZone"]
-position = Vector2(0, 1.91107)
-shape = SubResource("CircleShape2D_c4fu4")
-debug_color = Color(0.0627076, 0.596476, 0.170236, 0.42)
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 8
+shape = SubResource("CircleShape2D_k653d")
+debug_color = Color(0, 0.7, 0.0601562, 0.42)
