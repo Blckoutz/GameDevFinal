@@ -1,19 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdv0ljcek3y1t"]
+[gd_scene load_steps=3 format=3 uid="uid://cdv0ljcek3y1t"]
 
 [ext_resource type="Script" path="res://scripts/killzone.gd" id="1_5acit"]
-[ext_resource type="Texture2D" uid="uid://dni67fux2pe2d" path="res://assets/jumpscare1.png" id="2_jgnuv"]
-[ext_resource type="Texture2D" uid="uid://bds180wd8d8q0" path="res://assets/jumpscare2.png" id="3_k34k3"]
-[ext_resource type="AudioStream" uid="uid://duw3h2riyjldi" path="res://music/demonic-woman-scream-6333.mp3" id="4_34ji7"]
-[ext_resource type="AudioStream" uid="uid://b3qs3mqu2o65v" path="res://music/jumpscare-1-258269.mp3" id="4_yrt1r"]
-[ext_resource type="AudioStream" uid="uid://sxchl6tcs4mt" path="res://music/monster-scream-1-45669.mp3" id="6_qbyum"]
-[ext_resource type="AudioStream" uid="uid://cq4vy0f1chfak" path="res://music/horror-voice-flashbacks-14469.mp3" id="7_rogo4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75o55"]
 
 [node name="Killzone" type="Node2D"]
 script = ExtResource("1_5acit")
-jumpscare_images = Array[Texture2D]([ExtResource("2_jgnuv"), ExtResource("3_k34k3")])
-jumpscare_audios = Array[AudioStream]([ExtResource("4_34ji7"), ExtResource("4_yrt1r"), ExtResource("6_qbyum"), ExtResource("7_rogo4")])
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
@@ -22,9 +14,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_75o55")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 2.0
-
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -32,8 +21,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Camera2D" type="Camera2D" parent="TextureRect"]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 12.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

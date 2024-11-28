@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cs2m683ck8u1d" path="res://scenes/characters/enemy.tscn" id="5_3uanm"]
 [ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="6_6kiu5"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s2rm1"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4fddr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oedoh"]
 polygon = PackedVector2Array(2.125, 8, 2.25, 2.375, 8, 1.875, 8, 8)
@@ -169,7 +169,7 @@ polygon = PackedVector2Array(-8, -8, 0.125, -8, -0.25, 4, 8, 3.875, 8, 8, -0.353
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hpag6"]
 polygon = PackedVector2Array(-8, 4.25, 8, 4.125, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2r0a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86ucb"]
 texture = ExtResource("1_d771e")
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_oedoh")
@@ -1440,24 +1440,24 @@ texture = ExtResource("1_d771e")
 occlusion_layer_0/light_mask = 7
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_s2rm1")
-sources/0 = SubResource("TileSetAtlasSource_k2r0a")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_4fddr")
+sources/0 = SubResource("TileSetAtlasSource_86ucb")
 
-[sub_resource type="Gradient" id="Gradient_vaxhs"]
+[sub_resource type="Gradient" id="Gradient_6pst2"]
 offsets = PackedFloat32Array(0.397436, 0.666667, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.717949, 0.717949, 0.717949, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nk1x3"]
-gradient = SubResource("Gradient_vaxhs")
+gradient = SubResource("Gradient_6pst2")
 fill_from = Vector2(0.175214, 0.452991)
 fill_to = Vector2(0.705128, 0.944444)
 
-[sub_resource type="Gradient" id="Gradient_ywdl5"]
+[sub_resource type="Gradient" id="Gradient_o23qd"]
 offsets = PackedFloat32Array(0, 0.495726, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xg21f"]
-gradient = SubResource("Gradient_ywdl5")
+gradient = SubResource("Gradient_o23qd")
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("player_camera", "room_cameras")]
 script = ExtResource("1_jr6ag")
@@ -1564,7 +1564,7 @@ scale = Vector2(3.17188, 1.14063)
 energy = 0.67
 texture = SubResource("GradientTexture2D_xg21f")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 300.0
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 autostart = true

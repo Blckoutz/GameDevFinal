@@ -1,3 +1,102 @@
-[gd_scene format=3 uid="uid://crluir3yjd7kr"]
+[gd_scene load_steps=15 format=3 uid="uid://crluir3yjd7kr"]
+
+[ext_resource type="Script" path="res://scripts/celebration.gd" id="1_p65jy"]
+[ext_resource type="Texture2D" uid="uid://cgaa3yfmbw1og" path="res://assets/confetti/frame_0_delay-0.12s.png" id="2_cccja"]
+[ext_resource type="Texture2D" uid="uid://dbbtrvj67b0on" path="res://assets/confetti/frame_1_delay-0.12s.png" id="3_6c01g"]
+[ext_resource type="Texture2D" uid="uid://erjn7m682xu4" path="res://assets/confetti/frame_2_delay-0.12s.png" id="4_wjih0"]
+[ext_resource type="Texture2D" uid="uid://nyx5dghxhihg" path="res://assets/confetti/frame_3_delay-0.12s.png" id="5_d6vt4"]
+[ext_resource type="Texture2D" uid="uid://brwlck4x8h6ss" path="res://assets/confetti/frame_4_delay-0.12s.png" id="6_q5jnj"]
+[ext_resource type="Texture2D" uid="uid://dqao4an75x78g" path="res://assets/confetti/frame_5_delay-0.12s.png" id="7_lta5m"]
+[ext_resource type="Texture2D" uid="uid://0d5flhq6ojqq" path="res://assets/confetti/frame_6_delay-0.12s.png" id="8_o43pm"]
+[ext_resource type="Texture2D" uid="uid://b1vnlv2cslbn6" path="res://assets/confetti/frame_7_delay-0.12s.png" id="9_ucppc"]
+[ext_resource type="AudioStream" uid="uid://df58q5nnjanq2" path="res://music/group_yay_cheer-101509.mp3" id="10_lk03q"]
+[ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="11_rp4h5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1xva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cccja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6c01g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wjih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d6vt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q5jnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lta5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o43pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ucppc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_w8jrc"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.198273, 0.570313, 0.570313, 1, 0.0762024, 0.886719, 0.71575, 1, 0.131958, 0.71875, 0.38868, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7foh0"]
+gradient = SubResource("Gradient_w8jrc")
 
 [node name="Celebration" type="Node2D"]
+script = ExtResource("1_p65jy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(578, 324.5)
+scale = Vector2(2.23828, 1.26758)
+sprite_frames = SubResource("SpriteFrames_w1xva")
+frame_progress = 0.580419
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_lk03q")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0.0429688, 0.00621033, 0.00621033, 1)
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -107.5
+offset_right = 201.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_rp4h5")
+theme_override_font_sizes/font_size = 120
+text = "YOU WIN!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Label"]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+offset_left = 21.0
+offset_top = 55.0
+offset_right = 376.0
+offset_bottom = 170.0
+texture = SubResource("GradientTexture1D_7foh0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

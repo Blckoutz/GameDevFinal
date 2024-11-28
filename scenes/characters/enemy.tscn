@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cs2m683ck8u1d"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qkiyk"]
-[ext_resource type="Texture2D" uid="uid://lnxqcoe28fpc" path="res://assets/Skeleton.png" id="1_xei72"]
+[ext_resource type="Texture2D" uid="uid://dt7unpye4cv14" path="res://assets/Skeleton.png" id="1_xei72"]
 [ext_resource type="PackedScene" uid="uid://cdv0ljcek3y1t" path="res://scenes/misc/killzone.tscn" id="3_gx0qv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm1k4"]

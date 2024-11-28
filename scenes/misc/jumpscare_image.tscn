@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtmd6wtmssrjo"]
+
+[ext_resource type="Script" path="res://scripts/jumpscareImage.gd" id="1_o5ybl"]
+[ext_resource type="Texture2D" uid="uid://dni67fux2pe2d" path="res://assets/jumpscare1.png" id="2_mw63h"]
+[ext_resource type="Texture2D" uid="uid://bds180wd8d8q0" path="res://assets/jumpscare2.png" id="3_apveh"]
+[ext_resource type="AudioStream" uid="uid://duw3h2riyjldi" path="res://music/demonic-woman-scream-6333.mp3" id="4_whpc4"]
+[ext_resource type="AudioStream" uid="uid://cq4vy0f1chfak" path="res://music/horror-voice-flashbacks-14469.mp3" id="5_2orbl"]
+[ext_resource type="AudioStream" uid="uid://b3qs3mqu2o65v" path="res://music/jumpscare-1-258269.mp3" id="6_cnich"]
+[ext_resource type="AudioStream" uid="uid://sxchl6tcs4mt" path="res://music/monster-scream-1-45669.mp3" id="7_n31p3"]
+
+[node name="JumpscareImage" type="Node2D"]
+script = ExtResource("1_o5ybl")
+jumpscare_images = Array[Texture2D]([ExtResource("2_mw63h"), ExtResource("3_apveh")])
+jumpscare_audios = Array[AudioStream]([ExtResource("4_whpc4"), ExtResource("5_2orbl"), ExtResource("6_cnich"), ExtResource("7_n31p3")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 7.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="TextureRect"]
+position = Vector2(577, 323)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
