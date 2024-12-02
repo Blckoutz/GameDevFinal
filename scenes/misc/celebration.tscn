@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://crluir3yjd7kr"]
 
 [ext_resource type="Script" path="res://scripts/celebration.gd" id="1_p65jy"]
-[ext_resource type="Texture2D" uid="uid://cgaa3yfmbw1og" path="res://assets/confetti/frame_0_delay-0.12s.png" id="2_cccja"]
-[ext_resource type="Texture2D" uid="uid://dbbtrvj67b0on" path="res://assets/confetti/frame_1_delay-0.12s.png" id="3_6c01g"]
-[ext_resource type="Texture2D" uid="uid://erjn7m682xu4" path="res://assets/confetti/frame_2_delay-0.12s.png" id="4_wjih0"]
-[ext_resource type="Texture2D" uid="uid://nyx5dghxhihg" path="res://assets/confetti/frame_3_delay-0.12s.png" id="5_d6vt4"]
-[ext_resource type="Texture2D" uid="uid://brwlck4x8h6ss" path="res://assets/confetti/frame_4_delay-0.12s.png" id="6_q5jnj"]
-[ext_resource type="Texture2D" uid="uid://dqao4an75x78g" path="res://assets/confetti/frame_5_delay-0.12s.png" id="7_lta5m"]
-[ext_resource type="Texture2D" uid="uid://0d5flhq6ojqq" path="res://assets/confetti/frame_6_delay-0.12s.png" id="8_o43pm"]
-[ext_resource type="Texture2D" uid="uid://b1vnlv2cslbn6" path="res://assets/confetti/frame_7_delay-0.12s.png" id="9_ucppc"]
-[ext_resource type="AudioStream" uid="uid://df58q5nnjanq2" path="res://music/group_yay_cheer-101509.mp3" id="10_lk03q"]
+[ext_resource type="Texture2D" uid="uid://dpmebvyxh18cq" path="res://assets/confetti/frame_0_delay-0.12s.png" id="2_cccja"]
+[ext_resource type="Texture2D" uid="uid://0noov6l617gv" path="res://assets/confetti/frame_1_delay-0.12s.png" id="3_6c01g"]
+[ext_resource type="Texture2D" uid="uid://ds4ai151nmcn6" path="res://assets/confetti/frame_2_delay-0.12s.png" id="4_wjih0"]
+[ext_resource type="Texture2D" uid="uid://dua4llf1e6nhk" path="res://assets/confetti/frame_3_delay-0.12s.png" id="5_d6vt4"]
+[ext_resource type="Texture2D" uid="uid://ly33jvcqmg88" path="res://assets/confetti/frame_4_delay-0.12s.png" id="6_q5jnj"]
+[ext_resource type="Texture2D" uid="uid://co0o6v2gww3q5" path="res://assets/confetti/frame_5_delay-0.12s.png" id="7_lta5m"]
+[ext_resource type="Texture2D" uid="uid://bubp77w11pam" path="res://assets/confetti/frame_6_delay-0.12s.png" id="8_o43pm"]
+[ext_resource type="Texture2D" uid="uid://da650daxpdjq4" path="res://assets/confetti/frame_7_delay-0.12s.png" id="9_ucppc"]
+[ext_resource type="AudioStream" uid="uid://b465su7b7wau" path="res://music/group_yay_cheer-101509.mp3" id="10_lk03q"]
 [ext_resource type="FontFile" uid="uid://3feblaof6xa7" path="res://fonts/GelatinTTFCAPS.ttf" id="11_rp4h5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w1xva"]
@@ -93,6 +93,7 @@ vertical_alignment = 1
 show_behind_parent = true
 light_mask = 2
 visibility_layer = 2
+layout_mode = 0
 offset_left = 21.0
 offset_top = 55.0
 offset_right = 376.0

@@ -1565,6 +1565,6 @@ energy = 0.67
 texture = SubResource("GradientTexture2D_xg21f")
 
 [node name="LevelTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 300.0
 one_shot = true
 autostart = true
